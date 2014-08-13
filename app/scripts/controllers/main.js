@@ -20,6 +20,10 @@ angular.module('base64App')
                 console.log(data);
                 $scope.encoded = data;
             });
+			$http.get("http://localhost:8080/md5?q=" +$scope.raw.toString())
+			.success(function(data, status, headers, config) {
+				$scope.md5 = data;
+			});
     }
     $scope.decodeString = function () {
        $http.get('http://localhost:8080/decode?q=' +$scope.encoded.toString())

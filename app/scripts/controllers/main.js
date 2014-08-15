@@ -24,6 +24,15 @@ angular.module('base64App')
 			.success(function(data, status, headers, config) {
 				$scope.md5 = data;
 			});
+			$http.get("http://localhost:8080/sha?q=" +$scope.raw.toString())
+			.success(function(data, status, headers, config) {
+				$scope.sha1 = data;
+			});
+			$http.get("http://localhost:8080/sha256?q=" +$scope.raw.toString())
+			.success(function(data, status, headers, config) {
+				$scope.sha256 = data;
+			});
+			
     }
     $scope.decodeString = function () {
        $http.get('http://localhost:8080/decode?q=' +$scope.encoded.toString())

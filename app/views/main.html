@@ -1,11 +1,24 @@
 <div class="row marketing">
-    <label>Input
-        <input ng-model="raw" ng-change="encodeString()" />
-        </label>
-        <label>base64
-      <input ng-model="encoded" ng-change="decodeString()" />
-  </label>
-  <label>MD5
-	  <input ng-model="md5">
-    </label>
+	<table class="table table-striped">
+		<tr>
+			<td>Plain text</td>
+        	<td><input ng-model="raw" ng-change="encodeString()" /></td>
+		</tr>
+		<tr>
+			<td>Base 64 encoded</td>
+      	  	<td><input ng-model="encoded" ng-change="decodeString()" /></td>
+		</tr>
+		<tr>
+			<td>MD5</td>
+			<td><input size="100" ng-model="md5" /></td>
+		</tr>
+		<tr>
+			<td>SHA1</td>
+			<td><input size="100" ng-model="sha1" /></td>
+		</tr>
+		<tr>
+			<td>SHA256</td>
+			<td><input size="100" ng-model="sha256" /></td>
+		</tr>
+	</table>
 </div>
